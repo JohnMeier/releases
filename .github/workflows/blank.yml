@@ -29,7 +29,9 @@ jobs:
         with:
           files: 1GB.bin
           draft: true
+          name: release_${{ steps.date.outputs.date }}
           tag_name: tag_${{ steps.date.outputs.date }}
       - name: Release-Output
         run: |
           echo ${{ steps.Release.outputs }}
+          echo ${{ fromJSON(steps.<step-id>.outputs.assets)[0].browser_download_url }}
