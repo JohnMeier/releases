@@ -28,6 +28,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: 1GB.bin
+          body_path: Release.txt
           draft: true
           name: release_${{ steps.date.outputs.date }}
           tag_name: tag_${{ steps.date.outputs.date }}
