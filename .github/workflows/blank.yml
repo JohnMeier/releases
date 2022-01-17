@@ -33,4 +33,4 @@ jobs:
           tag_name: tag_${{ steps.date.outputs.date }}
       - name: Release-Output
         run: |
-          echo ${{ steps.Release.outputs }}
+          echo ${{ steps.Release.outputs.id }}
