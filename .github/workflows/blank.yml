@@ -34,4 +34,3 @@ jobs:
       - name: Release-Output
         run: |
           echo ${{ steps.Release.outputs }}
-          echo ${{ fromJSON(steps.Release.outputs.assets)[0].browser_download_url }}
