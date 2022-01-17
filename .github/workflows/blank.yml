@@ -14,5 +14,5 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get install -y aria2
-          aria2c -s32 -x32 https://speed.hetzner.de/10GB.bin
+          aria2c -s8 -x8 https://speed.hetzner.de/10GB.bin
           echo test, and deploy your project.
