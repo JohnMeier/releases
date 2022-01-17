@@ -25,13 +25,14 @@ jobs:
       - name: Test
         run: cat Release.txt
       - name: release2536457867
-        uses: softprops/action-gh-release@v1
+      - uses: ncipollo/release-action@v1
         with:
-          files: 1GB.bin
-          body_path: Release.txt
-          draft: false
+          artifacts: 1GB.bin
+          bodyFile: "Release.txt"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: true
           name: release_${{ steps.date.outputs.date }}
           tag_name: tag_${{ steps.date.outputs.date }}
       - name: Release-Output
         run: |
-          echo ${{ steps.release2536457867.outputs.assets }}
+          echo ${{ steps.release2536457867.outputs }}
