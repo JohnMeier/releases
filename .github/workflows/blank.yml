@@ -29,7 +29,7 @@ jobs:
         with:
           files: 1GB.bin
           body_path: Release.txt
-          draft: true
+          draft: false
           name: release_${{ steps.date.outputs.date }}
           tag_name: tag_${{ steps.date.outputs.date }}
       - name: Release-Output
