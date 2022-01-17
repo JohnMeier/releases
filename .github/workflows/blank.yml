@@ -13,5 +13,6 @@ jobs:
         run: echo Hello, world!
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
+          apt-get install -y aria2
+          wget https://speed.hetzner.de/10GB.bin
           echo test, and deploy your project.
