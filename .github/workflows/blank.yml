@@ -17,22 +17,21 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get install -y aria2
-          aria2c -s8 -x8 http://speedtest.tele2.net/1GB.zip
-          mv 1GB.zip 1GB.bin
+          aria2c -s8 -x8 http://speedtest.tele2.net/10GB.zip
+          mv 10GB.zip 10GB.bin
           echo test, and deploy your project.
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
         run: cat Release.txt
       - name: release2536457867
-        uses: ncipollo/release-action@v1
+        uses: softprops/action-gh-release@v1
         with:
-          artifacts: 1GB.bin
-          bodyFile: "Release.txt"
-          token: ${{ secrets.GITHUB_TOKEN }}
-          draft: true
+          files: 10GB.bin
+          body_path: Release.txt
+          draft: false
           name: release_${{ steps.date.outputs.date }}
-          tag: tag_${{ steps.date.outputs.date }}
+          tag_name: tag_${{ steps.date.outputs.date }}
       - name: Release-Output
         run: |
           echo ${{ steps.release2536457867.outputs.id }}
