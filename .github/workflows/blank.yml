@@ -17,8 +17,8 @@ jobs:
       - name: Run a multi-line script
         run: |
           sudo apt-get install -y aria2
-          aria2c -s8 -x8 http://speedtest.tele2.net/10GB.zip
-          mv 10GB.zip 10GB.bin
+          aria2c -s8 -x8 http://speedtest.tele2.net/1GB.zip
+          mv 1GB.zip 1GB.bin
           echo test, and deploy your project.
       - name: Build
         run: echo ${{ github.sha }} > Release.txt
@@ -27,7 +27,7 @@ jobs:
       - name: release2536457867
         uses: softprops/action-gh-release@v1
         with:
-          files: 10GB.bin
+          files: 1GB.bin
           body_path: Release.txt
           draft: false
           name: release_${{ steps.date.outputs.date }}
