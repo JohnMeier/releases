@@ -24,7 +24,7 @@ jobs:
         run: echo ${{ github.sha }} > Release.txt
       - name: Test
         run: cat Release.txt
-      - name: Release
+      - name: release2536457867
         uses: softprops/action-gh-release@v1
         with:
           files: 1GB.bin
@@ -33,4 +33,4 @@ jobs:
           tag_name: tag_${{ steps.date.outputs.date }}
       - name: Release-Output
         run: |
-          echo ${{ steps.Release.outputs.id }}
+          echo ${{ steps.release2536457867.outputs.assets }}
