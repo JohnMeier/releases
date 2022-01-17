@@ -30,3 +30,6 @@ jobs:
           files: 1GB.bin
           draft: true
           tag_name: tag_${{ steps.date.outputs.date }}
+      - name: Release-Output
+        run: |
+          echo ${{ steps.Release.outputs }}
