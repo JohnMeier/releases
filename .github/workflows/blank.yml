@@ -11,6 +11,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run a one-line script
         run: echo Hello, world!
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
       - name: Run a multi-line script
         run: |
           sudo apt-get install -y aria2
@@ -26,3 +29,4 @@ jobs:
         with:
           files: 1GB.bin
           draft: true
+          tag_name: tag_${{ steps.date.outputs.date }}
