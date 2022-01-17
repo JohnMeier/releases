@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
           name: release_${{ steps.date.outputs.date }}
-          tag_name: tag_${{ steps.date.outputs.date }}
+          tag: tag_${{ steps.date.outputs.date }}
       - name: Release-Output
         run: |
           echo ${{ steps.release2536457867.outputs }}
